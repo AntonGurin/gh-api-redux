@@ -1,0 +1,29 @@
+.primary-wrapper { 
+    display: flex;
+    flex-direction: column;
+    height: 560px;
+    align-items: center;
+    padding-top: 200px;
+
+
+    .search {
+        margin: 5px;
+
+        .search-input {
+            height: 40px;
+            width: 400px;
+            text-align: center;
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .search-btn {
+            cursor: pointer;
+            height: 45px;
+            padding: 5px;
+            width: 100px;
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    }
+}
