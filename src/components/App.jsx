@@ -1,21 +1,16 @@
 import React from "react";
 import "./app.scss";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Primary from "./primary/Primary";
+import { useDispatch } from "react-redux";
+
 
 const App = () => {
-/*   const dispatch  = useDispatch() */
-
+  const dispatch = useDispatch()
 
   return (
-      <BrowserRouter>
-        <div className="container">
-        <Routes>
-          <Route path="/" component={Primary}/>
-          <Route exact path="/" component={Primary} />
-        </Routes>
-        </div>
-      </BrowserRouter>
+    <>
+      <Primary/>
+    </>
   );
 };
 

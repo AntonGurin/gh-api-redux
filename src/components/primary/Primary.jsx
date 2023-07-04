@@ -1,21 +1,19 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import "./primary.scss";
 import { getForks } from "../actions/forks";
 import { useDispatch, useSelector } from "react-redux";
-import Fork from "../fork/Fork";
+import { NavLink } from "react-router-dom";
+
 
 const Primary = () => {
+ 
     const dispatch = useDispatch();
     const [searchValue, setSearchValue] = useState("");
-
-    const forks = useSelector(state => state.forks.items);
-
-    useEffect(()=> {
-        dispatch(getForks())
-    },[])
+    const currentPage = useSelector(state => state.forks.currentPage);
+    const perPage = useSelector(state => state.forks.perPage);
 
     function searchForks(){
-        dispatch(getForks(searchValue))
+        dispatch(getForks(searchValue, currentPage, perPage))
     }
 
     return  (
@@ -24,18 +22,14 @@ const Primary = () => {
             <div className="search">
                 <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)}
                 type="text"  placeholder="input: owner/repositoryName" className="search-input"/>
-                <button onClick={() => searchForks ()} className="search-btn"> Search </button>
+                <NavLink to={`/result`}>
+                    <button onClick={() => searchForks ()} className="search-btn">
+                    Search 
+                    </button>
+                </NavLink>
             </div>
-            <div>
-                {forks.map(fork =>
-                    <Fork fork={fork}/>
-            )}
-        </div>
-        </div>
-        
+        </div>        
     );  
 }; 
-
-
 
 export default Primary;

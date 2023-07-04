@@ -1,0 +1,14 @@
+.fork{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border: solid 2px lightgreen;
+
+    &-link{
+        color: rgb(29, 94, 94);
+    }
+
+    &-stars{
+        color: yellow
+    }
+}
