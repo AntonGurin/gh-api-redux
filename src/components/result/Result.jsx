@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Fork from "../fork/Fork";
 import { getForks } from "../actions/forks";
 import { useEffect } from "react";
-/* import { useState } from "react"; */
 import "./result.scss";
 import { setCurrentPage, setIsFetching } from "../../reducers/forksReducer";
 import  {createPages}  from "../pagesCounter";
@@ -17,7 +16,6 @@ const Result =  () => {
 
     const [searchValue, setSearchValue] = useAtom(queryAtom);
     const dispatch = useDispatch();
-/*     const [searchValue, setSearchValue] = useState(""); */
     const forks = useSelector(state => state.forks.items);
     const isFetching = useSelector(state => state.forks.isFetching);
     const currentPage = useSelector(state => state.forks.currentPage);
